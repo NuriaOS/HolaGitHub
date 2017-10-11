@@ -8,8 +8,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+
+    public int i;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +29,13 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+        i=0;
+        if(i==0){
+            llamadaParamsNuevo();
+        }
+        i++;
+
     }
 
     @Override
@@ -48,5 +58,13 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void llamadaParamsNuevo(){
+        Nuevo t=new Nuevo();
+        if(t.j>t.vble){
+            Toast.makeText(this,"j es mayor que vble",Toast.LENGTH_SHORT).show();
+        }
+
     }
 }
